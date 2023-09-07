@@ -1,7 +1,4 @@
-Certainly! Here's a template for a GitHub README file for your personal website:
-
-```markdown
-# Your Name's Personal Website
+#TastyBarrel's Personal Website
 
 This website is for consolidating all of the various projects I am working on.
 
