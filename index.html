@@ -50,22 +50,28 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    min-height:100svh;
+    height:100svh;
     display:flex; flex-direction:column;
     padding: clamp(20px,3.2vw,44px) clamp(20px,4vw,56px) clamp(14px,2vw,22px);
     gap: clamp(10px, 2vh, 22px);
     max-width: 1100px;
-margin: 0 auto;
+    margin: 0 auto;
   }
 
   .identity-row{
-    display:flex; align-items:baseline; gap: clamp(14px,2vw,24px);
+    display:flex; align-items:center; gap: clamp(14px,2vw,24px);
+    flex-wrap:wrap;
+    justify-content:space-between;
+    row-gap:6px;
+  }
+  .identity-main{
+    display:flex; align-items:center; gap: clamp(14px,2vw,24px);
     flex-wrap:wrap;
   }
   .paa-code{
     font-family:'Space Mono', monospace;
     font-weight:700;
-    font-size: clamp(30px, 4vw, 44px);
+    font-size: clamp(24px, 3vw, 34px);
     letter-spacing: 0.06em;
     color: var(--text-dark);
     line-height:1;
@@ -74,9 +80,20 @@ margin: 0 auto;
     font-family:'Fraunces', serif;
     font-style:italic;
     font-weight:420;
-    font-size: clamp(16px, 1.6vw, 20px);
+    font-size: clamp(24px, 3vw, 34px);
     color: var(--text-muted);
     letter-spacing:0.01em;
+    line-height:1;
+  }
+  .paa-tagline{
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    font-size: clamp(12px, 1.05vw, 14px);
+    color: var(--text-muted);
+    letter-spacing:0.01em;
+    line-height:1.4;
+    max-width: 30ch;
+    text-align:right;
   }
 
   .board-region{
@@ -266,8 +283,7 @@ margin: 0 auto;
     position:relative;
     display:flex; align-items:center; justify-content:center;
     flex:1;
-    min-height: 120px;
-    max-height: 50vh;
+    min-height: 0;
     background: var(--board);
     border-radius: 8px;
     overflow:hidden;
@@ -357,15 +373,29 @@ margin: 0 auto;
     :root{
       --flap-h:34px; --flap-w:21px; --flap-fs:19px;
     }
+    .visual-link{ display:none; }
+    .visual-caption{
+      right: clamp(14px,4vw,22px);
+      max-width: none;
+      white-space:normal;
+    }
+    .identity-row{ justify-content:flex-start; }
+    .paa-tagline{ text-align:left; max-width:100%; }
   }
 
     .visual-frame{
     position:relative;
     width:100%;
-    max-height:100%;
-    aspect-ratio: 3 / 2;
+    height:100%;
     overflow:hidden;
     border-radius: 6px;
+  }
+  @media (min-width: 721px){
+    .visual-frame{
+      height:auto;
+      max-height:100%;
+      aspect-ratio: 3 / 2;
+    }
   }
   /* ---------- SECTIONS ---------- */
   section.page{
@@ -456,8 +486,11 @@ margin: 0 auto;
 
 <section class="hero" id="hero">
   <div class="identity-row">
-    <div class="paa-code">PAA</div>
-    <div class="paa-name">Paul Alderson</div>
+    <div class="identity-main">
+      <div class="paa-code">PAA</div>
+      <div class="paa-name">Paul Alderson</div>
+    </div>
+    <div class="paa-tagline">A place to see what I'm making, thinking about, and figuring out.</div>
   </div>
 
   <div class="board-region">
@@ -758,5 +791,3 @@ margin: 0 auto;
 </script>
 </body>
 </html>
-
- 
