@@ -262,9 +262,10 @@
   /* ---------- VISUAL PANEL ---------- */
   .visual-panel{
     position:relative;
-    display:block;
+    display:flex; align-items:center; justify-content:center;
     flex:1;
     min-height: 120px;
+    background: var(--board);
     border-radius: 8px;
     overflow:hidden;
     border: 1px solid rgba(29,24,17,0.1);
@@ -355,6 +356,14 @@
     }
   }
 
+    .visual-frame{
+    position:relative;
+    width:100%;
+    max-height:100%;
+    aspect-ratio: 3 / 2;
+    overflow:hidden;
+    border-radius: 6px;
+  }
   /* ---------- SECTIONS ---------- */
   section.page{
     padding: clamp(64px,10vh,120px) clamp(20px,6vw,80px);
@@ -471,6 +480,7 @@
     </div>
 
     <a class="visual-panel" id="visualPanel" href="#" target="_blank" rel="noopener" aria-label="View on Instagram">
+      <div class="visual-frame">
       <div class="visual-layer v-studio" data-tone="studio">
         <img src="The Studio.jpg" alt="Painting leaning against a studio wall" loading="lazy" onerror="this.style.display='none'">
       </div>
@@ -485,6 +495,7 @@
       </div>
       <div class="visual-caption" id="visualCaption">FIG. 01</div>
       <span class="visual-link" id="visualLink">INSTAGRAM ↗</span>
+      </div>
     </a>
   </div>
 
